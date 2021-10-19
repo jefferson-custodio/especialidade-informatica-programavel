@@ -7,6 +7,7 @@ use App\Http\Controllers\DesbravadoresController;
 use App\Http\Controllers\EspecialidadeController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\MensalidadesController;
+use App\Http\Controllers\CaixaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,4 +77,13 @@ Route::get('/mensalidades/{id}/editar', [MensalidadesController::class, 'edit'])
 
 Route::post('/mensalidades', [MensalidadesController::class, 'store'])->middleware('auth');
 Route::put('/mensalidades/{id}', [MensalidadesController::class, 'update'])->middleware('auth');
+
+// caixa
+
+Route::get('/caixa', [CaixaController::class, 'index'])->middleware('auth')->name('caixa');
+Route::get('/caixa/novo', [CaixaController::class, 'create'])->middleware('auth');
+Route::get('/caixa/{id}/editar', [CaixaController::class, 'edit'])->middleware('auth');
+
+Route::post('/caixa', [CaixaController::class, 'store'])->middleware('auth');
+Route::put('/caixa/{id}', [CaixaController::class, 'update'])->middleware('auth');
 

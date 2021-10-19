@@ -45,10 +45,10 @@
           </a>
         </div>
         <div class="col-md-4">
-          <a class="card" href="/classes">
+          <a class="card" href="/caixa">
             <div class="card-block" >
-              <i class="fas fa-stop-circle"></i>
-              <h4 class="card-title">Classes</h4>
+              <i class="fas fa-hand-holding-usd"></i>
+              <h4 class="card-title">Caixa</h4>
             </div>
           </a>
         </div>
