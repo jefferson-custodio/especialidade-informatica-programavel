@@ -8,6 +8,8 @@ use App\Http\Controllers\EspecialidadeController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\MensalidadesController;
 use App\Http\Controllers\CaixaController;
+use App\Http\Controllers\CustosController;
+use App\Http\Controllers\BensController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,3 +89,20 @@ Route::get('/caixa/{id}/editar', [CaixaController::class, 'edit'])->middleware('
 Route::post('/caixa', [CaixaController::class, 'store'])->middleware('auth');
 Route::put('/caixa/{id}', [CaixaController::class, 'update'])->middleware('auth');
 
+// custos
+
+Route::get('/custos', [CustosController::class, 'index'])->middleware('auth')->name('custos');
+Route::get('/custos/novo', [CustosController::class, 'create'])->middleware('auth');
+Route::get('/custos/{id}/editar', [CustosController::class, 'edit'])->middleware('auth');
+
+Route::post('/custos', [CustosController::class, 'store'])->middleware('auth');
+Route::put('/custos/{id}', [CustosController::class, 'update'])->middleware('auth');
+
+// bens
+
+Route::get('/bens', [BensController::class, 'index'])->middleware('auth')->name('bens');
+Route::get('/bens/novo', [BensController::class, 'create'])->middleware('auth');
+Route::get('/bens/{id}/editar', [BensController::class, 'edit'])->middleware('auth');
+
+Route::post('/bens', [BensController::class, 'store'])->middleware('auth');
+Route::put('/bens/{id}', [BensController::class, 'update'])->middleware('auth');

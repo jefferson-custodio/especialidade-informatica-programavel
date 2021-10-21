@@ -7,7 +7,7 @@ use App\Models\Caixa;
 
 class CaixaController extends Controller
 {
-     public function index(Request $request)
+    public function index(Request $request)
     {
 
         $paginator = Caixa::paginate(30);
@@ -48,11 +48,11 @@ class CaixaController extends Controller
     public function update(Request $request, $id)
     {
 
-        $unidade = Caixa::find($id);
-        $unidade->valor = $request->valor;
-        $unidade->data = $request->data;
-        $unidade->descricao = $request->descricao;
-        $unidade->save();
+        $caixa = Caixa::find($id);
+        $caixa->valor = $request->valor;
+        $caixa->data = $request->data;
+        $caixa->descricao = $request->descricao;
+        $caixa->save();
 
         return redirect()->route('caixa')->withStatus("Registro de Caixa #$id alterado com sucesso!");
     }

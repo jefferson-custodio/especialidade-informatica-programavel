@@ -52,6 +52,22 @@
             </div>
           </a>
         </div>
+        <div class="col-md-4">
+          <a class="card" href="/custos">
+            <div class="card-block" >
+              <i class="fas fa-funnel-dollar"></i>
+              <h4 class="card-title">Custos</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="card" href="/bens">
+            <div class="card-block" >
+              <i class="fas fa-trophy"></i>
+              <h4 class="card-title">Bens</h4>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
