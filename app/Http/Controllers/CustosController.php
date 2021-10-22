@@ -47,8 +47,8 @@ class CustosController extends Controller
     {
 
         $custo = Custo::find($id);
-        $custo->valor = $request->valor;
-        $custo->descricao = $request->descricao;
+         if($request->hasFile('valor'))$custo->valor = $request->valor;
+         if($request->hasFile('descricao'))$custo->descricao = $request->descricao;
         $custo->save();
 
         return redirect()->route('custos')->withStatus("Registro de Custo #$id alterado com sucesso!");

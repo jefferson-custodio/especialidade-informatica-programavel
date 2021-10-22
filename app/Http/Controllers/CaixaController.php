@@ -49,9 +49,9 @@ class CaixaController extends Controller
     {
 
         $caixa = Caixa::find($id);
-        $caixa->valor = $request->valor;
-        $caixa->data = $request->data;
-        $caixa->descricao = $request->descricao;
+        if($request->hasFile('valor'))$caixa->valor = $request->valor;
+        if($request->hasFile('data'))$caixa->data = $request->data;
+        if($request->hasFile('descricao'))$caixa->descricao = $request->descricao;
         $caixa->save();
 
         return redirect()->route('caixa')->withStatus("Registro de Caixa #$id alterado com sucesso!");

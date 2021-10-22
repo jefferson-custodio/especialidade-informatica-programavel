@@ -51,8 +51,8 @@ class EspecialidadeController extends Controller
     {
 
         $especialidade = Especialidade::find($id);
-        $especialidade->nome = $request->nome;
-        $especialidade->especialidade_categoria_id = $request->especialidade_categoria_id;
+        if($request->hasFile('nome'))$especialidade->nome = $request->nome;
+        if($request->hasFile('especialidade_categoria_id'))$especialidade->especialidade_categoria_id = $request->especialidade_categoria_id;
         $especialidade->save();
 
         return redirect()->route('especialidades')->withStatus("Especialidade #$id alterada com sucesso!");

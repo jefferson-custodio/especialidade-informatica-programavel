@@ -45,7 +45,7 @@ class UnidadesController extends Controller
     {
 
         $unidade = Unidade::find($id);
-        $unidade->nome = $request->nome;
+        if($request->hasFile('nome'))$unidade->nome = $request->nome;
         $unidade->save();
 
         return redirect()->route('unidades')->withStatus("Unidade #$id alterada com sucesso!");

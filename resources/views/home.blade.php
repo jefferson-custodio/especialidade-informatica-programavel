@@ -64,7 +64,15 @@
           <a class="card" href="/bens">
             <div class="card-block" >
               <i class="fas fa-trophy"></i>
-              <h4 class="card-title">Bens</h4>
+              <h4 class="card-title">Patrimônio</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="card" href="/atas">
+            <div class="card-block" >
+              <i class="fas fa-file-alt"></i>
+              <h4 class="card-title">Atas</h4>
             </div>
           </a>
         </div>

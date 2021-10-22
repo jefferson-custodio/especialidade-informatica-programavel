@@ -10,6 +10,7 @@ use App\Http\Controllers\MensalidadesController;
 use App\Http\Controllers\CaixaController;
 use App\Http\Controllers\CustosController;
 use App\Http\Controllers\BensController;
+use App\Http\Controllers\AtasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,3 +107,14 @@ Route::get('/bens/{id}/editar', [BensController::class, 'edit'])->middleware('au
 
 Route::post('/bens', [BensController::class, 'store'])->middleware('auth');
 Route::put('/bens/{id}', [BensController::class, 'update'])->middleware('auth');
+
+
+// atas
+
+Route::get('/atas', [AtasController::class, 'index'])->middleware('auth')->name('atas');
+Route::get('/atas/novo', [AtasController::class, 'create'])->middleware('auth');
+Route::get('/atas/{id}/editar', [AtasController::class, 'edit'])->middleware('auth');
+
+Route::post('/atas', [AtasController::class, 'store'])->middleware('auth');
+Route::put('/atas/{id}', [AtasController::class, 'update'])->middleware('auth');
+

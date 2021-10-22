@@ -45,7 +45,7 @@ class ClassesController extends Controller
     {
 
         $classe = Classe::find($id);
-        $classe->nome = $request->nome;
+         if($request->hasFile('nome'))$classe->nome = $request->nome;
         $classe->save();
 
         return redirect()->route('classes')->withStatus("Classe #$id alterada com sucesso!");
