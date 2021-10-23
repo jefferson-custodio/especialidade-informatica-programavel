@@ -53,10 +53,10 @@ class DesbravadoresController extends Controller
     {
 
         $desbravador = Desbravador::find($id);
-        if($request->hasFile('nome'))$desbravador->nome = $request->nome;
-        if($request->hasFile('email'))$desbravador->email = $request->email;
-        if($request->hasFile('documento'))$desbravador->documento = $request->documento;
-        if($request->hasFile('unidade_id'))$desbravador->unidade_id = $request->unidade_id;
+        if($request->has('nome'))$desbravador->nome = $request->nome;
+        if($request->has('email'))$desbravador->email = $request->email;
+        if($request->has('documento'))$desbravador->documento = $request->documento;
+        if($request->has('unidade_id'))$desbravador->unidade_id = $request->unidade_id;
         $desbravador->save();
 
         return redirect()->route('desbravadores')->withStatus("Desbravador #$id alterado com sucesso!");

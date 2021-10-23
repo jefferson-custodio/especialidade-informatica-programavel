@@ -52,9 +52,9 @@ class MensalidadesController extends Controller
     {
 
         $unidade = Mensalidade::find($id);
-        if($request->hasFile('desbravador_id'))$unidade->desbravador_id = $request->desbravador_id;
-        if($request->hasFile('valor'))$unidade->valor = $request->valor;
-        if($request->hasFile('data'))$unidade->data = $request->data;
+        if($request->has('desbravador_id'))$unidade->desbravador_id = $request->desbravador_id;
+        if($request->has('valor'))$unidade->valor = $request->valor;
+        if($request->has('data'))$unidade->data = $request->data;
         $unidade->save();
 
         return redirect()->route('mensalidades')->withStatus("Mensalidade #$id alterada com sucesso!");

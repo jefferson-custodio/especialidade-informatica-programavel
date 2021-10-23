@@ -3,27 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Ata;
+use App\Models\Ato;
 
-class AtasController extends Controller
+class AtosController extends Controller
 {
     public function index(Request $request)
     {
 
-        $paginator = Ata::paginate(30);
+        $paginator = Ato::paginate(30);
         // dd($paginator );
-        return view('atas.index', ['paginator'=>$paginator]);
+        return view('atos.index', ['paginator'=>$paginator]);
     }
     
     public function create(Request $request)
     {
-        return view('atas.form', []);
+        return view('atos.form', []);
     }
     
     public function edit(Request $request, $id)
     {
-        $ata = Ata::find($id);
-        return view('atas.form', ['ata'=>$ata,]);
+        $ato = Ato::find($id);
+        return view('atos.form', ['ato'=>$ato,]);
     }
     
     public function store(Request $request)
@@ -44,32 +44,32 @@ class AtasController extends Controller
             $url = \Storage::url($filename);
         }
 
-        Ata::create([
+        Ato::create([
             'titulo'=>$request->titulo,
             'descricao'=>$request->descricao,
             'arquivo'=>$url,
         ]);
 
-        return redirect()->route('atas')->withStatus('Registro de atas criado com sucesso!');
+        return redirect()->route('atos')->withStatus('Registro de atos criado com sucesso!');
     }
     
     public function update(Request $request, $id)
     {
 
-        $ata = Ata::find($id);
-        if($request->has('titulo')) $ata->titulo = $request->titulo;
-        if($request->has('descricao')) $ata->descricao = $request->descricao;
+        $ato = Ato::find($id);
+        if($request->has('titulo')) $ato->titulo = $request->titulo;
+        if($request->has('descricao')) $ato->descricao = $request->descricao;
 
          if ($request->hasFile('arquivo')) {
             $extension = $request->arquivo->extension();
-            $filename = $ata->titulo."-".time().".".$extension;
+            $filename = $ato->titulo."-".time().".".$extension;
             $request->arquivo->storeAs('/public',  $filename);
             $url = \Storage::url( $filename);
-            $ata->arquivo =  $url;
+            $ato->arquivo =  $url;
         }
 
-        $ata->save();
+        $ato->save();
 
-        return redirect()->route('atas')->withStatus("Registro de Ata #$id alterado com sucesso!");
+        return redirect()->route('atos')->withStatus("Registro de Ato #$id alterado com sucesso!");
     }
 }

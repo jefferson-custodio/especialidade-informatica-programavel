@@ -11,6 +11,7 @@ use App\Http\Controllers\CaixaController;
 use App\Http\Controllers\CustosController;
 use App\Http\Controllers\BensController;
 use App\Http\Controllers\AtasController;
+use App\Http\Controllers\AtosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,3 +119,11 @@ Route::get('/atas/{id}/editar', [AtasController::class, 'edit'])->middleware('au
 Route::post('/atas', [AtasController::class, 'store'])->middleware('auth');
 Route::put('/atas/{id}', [AtasController::class, 'update'])->middleware('auth');
 
+// atos
+
+Route::get('/atos', [AtosController::class, 'index'])->middleware('auth')->name('atos');
+Route::get('/atos/novo', [AtosController::class, 'create'])->middleware('auth');
+Route::get('/atos/{id}/editar', [AtosController::class, 'edit'])->middleware('auth');
+
+Route::post('/atos', [AtosController::class, 'store'])->middleware('auth');
+Route::put('/atos/{id}', [AtosController::class, 'update'])->middleware('auth');

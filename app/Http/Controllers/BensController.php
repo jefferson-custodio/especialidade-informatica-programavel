@@ -56,7 +56,7 @@ class BensController extends Controller
     {
 
         $bem = Bem::find($id);
-        if($request->hasFile('descricao')) $bem->descricao = $request->descricao;
+        if($request->has('descricao')) $bem->descricao = $request->descricao;
 
          if ($request->hasFile('foto')) {
             $extension = $request->foto->extension();
