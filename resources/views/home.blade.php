@@ -84,6 +84,14 @@
             </div>
           </a>
         </div>
+        <div class="col-md-4">
+          <a class="card" href="/autorizacoes">
+            <div class="card-block" >
+              <i class="fas fa-file-alt"></i>
+              <h4 class="card-title">Autorizações</h4>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@ class Ato extends Model
 {
     use HasFactory;
 
-     protected $table = 'atos';
+    protected $table = 'atos';
 
     protected $fillable = [
         'descricao',

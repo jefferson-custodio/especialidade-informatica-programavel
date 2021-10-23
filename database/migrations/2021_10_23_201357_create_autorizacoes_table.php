@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMensalidadesTable extends Migration
+class CreateAutorizacoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateMensalidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('mensalidades', function (Blueprint $table) {
+        Schema::create('autorizacoes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('desbravador_id');
-            $table->decimal('valor',10,2);
-            $table->date('data');
+            $table->string('arquivo', 2000);
             $table->timestamps();
 
             $table->foreign('desbravador_id')->references('id')->on('desbravadores');
@@ -31,6 +30,6 @@ class CreateMensalidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mensalidades');
+        Schema::dropIfExists('autorizacoes');
     }
 }

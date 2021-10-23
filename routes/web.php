@@ -12,6 +12,7 @@ use App\Http\Controllers\CustosController;
 use App\Http\Controllers\BensController;
 use App\Http\Controllers\AtasController;
 use App\Http\Controllers\AtosController;
+use App\Http\Controllers\AutorizacoesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,3 +128,13 @@ Route::get('/atos/{id}/editar', [AtosController::class, 'edit'])->middleware('au
 
 Route::post('/atos', [AtosController::class, 'store'])->middleware('auth');
 Route::put('/atos/{id}', [AtosController::class, 'update'])->middleware('auth');
+
+
+// autorizacoes
+
+Route::get('/autorizacoes', [AutorizacoesController::class, 'index'])->middleware('auth')->name('autorizacoes');
+Route::get('/autorizacoes/novo', [AutorizacoesController::class, 'create'])->middleware('auth');
+Route::get('/autorizacoes/{id}/editar', [AutorizacoesController::class, 'edit'])->middleware('auth');
+
+Route::post('/autorizacoes', [AutorizacoesController::class, 'store'])->middleware('auth');
+Route::put('/autorizacoes/{id}', [AutorizacoesController::class, 'update'])->middleware('auth');
