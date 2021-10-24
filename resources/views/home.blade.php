@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app',['nav'=>true])
 
 @section('content')
 <div class="py-5 admin-cards-wrapper">

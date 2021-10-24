@@ -19,3 +19,11 @@ body {
 table td img {
   max-height: 50px;
 }
+
+a.card {
+  color: #ec3237 !important;
+}
+
+a.card:hover {
+  color: #cf282e !important;
+}
